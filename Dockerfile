@@ -1,4 +1,4 @@
-FROM php:7.3.0-apache
+FROM php:7.3.10-apache
 
 ENV WWWROOT_DIR /app/public
 
@@ -15,7 +15,7 @@ RUN apt-get update \
         mbstring \
         pdo_mysql \
         zip \
-    && pecl install mcrypt-1.0.1 \
+    && pecl install mcrypt-1.0.3 \
     && docker-php-ext-enable mcrypt \
     && apt-get clean \
     && apt-get autoclean \
