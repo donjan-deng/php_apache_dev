@@ -1,4 +1,4 @@
-FROM daocloud.io/7.3.10-apache
+FROM 7.3.10-apache
 
 ENV WWWROOT_DIR /app/public
 
