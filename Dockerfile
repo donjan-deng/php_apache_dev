@@ -9,6 +9,8 @@ RUN apt-get update \
         git \
         wget \
         libpcre3-dev \
+        libzip-dev \
+        apt-utils \
     && docker-php-ext-install \
         mbstring \
         pdo_mysql \
