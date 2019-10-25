@@ -33,10 +33,10 @@ RUN apt-get update \
 # 配置默认放置 App 的目录
 RUN a2enmod rewrite \
     && mkdir -p /app \
-    # && chown -R www-data:www-data /app \
+    && chown -R www-data:www-data /app \
     && rm -fr /var/www/html \
-    && ln -s $WWWROOT_DIR /var/www/html
-    # && chown -R www-data:www-data /var/www/html
+    && ln -s $WWWROOT_DIR /var/www/html \
+    && chown -R www-data:www-data /var/www/html
 
 WORKDIR /app
 
