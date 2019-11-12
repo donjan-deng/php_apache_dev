@@ -1,7 +1,5 @@
 FROM php:7.3.10-apache
 
-ENV WWWROOT_DIR /app/public
-
 RUN apt-get update \
     && apt-get install -y \
         libmcrypt-dev \
@@ -33,8 +31,6 @@ RUN apt-get update \
 # 配置默认放置 App 的目录
 RUN a2enmod rewrite \
     && mkdir -p /app 
-
-CMD "rm -fr /var/www/html && ln -s $WWWROOT_DIR  /var/www/html"
 
 WORKDIR /app
 
