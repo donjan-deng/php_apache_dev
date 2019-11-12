@@ -11,9 +11,15 @@ docker run -d --name php-apache-dev \
 
 进入容器
 
+ ``` 
 docker exec -it php-apache-dev bash
+ ``` 
+
 将你代码的入口文件连接到/var/www/html
+
+ ``` 
 rm -fr /var/www/html && ln -s /yourcode/public  /var/www/html
+ ``` 
 
 -p 3000:80 主机3000端口映射到容器80端口，通过127.0.0.1:3000就可以访问了
 
