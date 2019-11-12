@@ -32,9 +32,11 @@ RUN apt-get update \
 # 开启 URL 重写模块
 # 配置默认放置 App 的目录
 RUN a2enmod rewrite \
-    && mkdir -p /app \
-    && rm -fr /var/www/html \
-    && ln -s $WWWROOT_DIR /var/www/html 
+    && mkdir -p /app 
+
+COPY startup.sh /usr/local
+RUN chmod +x /usr/local/startup.sh
+CMD sh /usr/local/startup.sh
 
 WORKDIR /app
 
