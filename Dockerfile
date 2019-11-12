@@ -34,9 +34,7 @@ RUN apt-get update \
 RUN a2enmod rewrite \
     && mkdir -p /app 
 
-COPY startup.sh /usr/local
-RUN chmod +x /usr/local/startup.sh
-CMD sh /usr/local/startup.sh
+CMD rm -fr /var/www/html && ln -s $WWWROOT_DIR  /var/www/html
 
 WORKDIR /app
 
