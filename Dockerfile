@@ -34,7 +34,7 @@ RUN apt-get update \
 RUN a2enmod rewrite \
     && mkdir -p /app 
 
-CMD rm -fr /var/www/html && ln -s $WWWROOT_DIR  /var/www/html
+CMD "rm -fr /var/www/html && ln -s $WWWROOT_DIR  /var/www/html"
 
 WORKDIR /app
 

@@ -6,8 +6,10 @@ docker run -d --name php-apache-dev \
   -v /yourcode:/app \
   -p 3000:80 \
   -e WWWROOT_DIR=/app/public \
-  donjan/php-apache-dev:master-dev
+  donjan/php-apache-dev:7.3.10
  ``` 
+/yourcode 为代码在宿主机路径
+
 WWWROOT_DIR 为入口文件所在
 
 -p 3000:80 主机3000端口映射到容器80端口，通过127.0.0.1:3000就可以访问了
