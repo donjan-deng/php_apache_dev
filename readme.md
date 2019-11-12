@@ -5,10 +5,12 @@ docker run -d --name php-apache-dev \
   --restart=always \
   -v /yourcode:/app \
   -p 3000:80 \
-  -e WWWROOT_DIR=/app/public
+  -e WWWROOT_DIR=/app/public \
   donjan/php-apache-dev:master-dev
  ``` 
 WWWROOT_DIR 为入口文件所在
+
+-p 3000:80 主机3000端口映射到容器80端口，通过127.0.0.1:3000就可以访问了
 
 如果是以其他方式挂载目录，记得指定apache用户www-data，例如
 
