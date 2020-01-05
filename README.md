@@ -5,7 +5,7 @@ docker run -d --name php-apache-dev \
   --restart=always \
   -v /yourcode:/app \
   -p 3000:80 \
-  donjan/php-apache-dev:7.3.10
+  donjan/php-apache-dev:master-dev
  ``` 
 /yourcode 为代码在宿主机路径
 
